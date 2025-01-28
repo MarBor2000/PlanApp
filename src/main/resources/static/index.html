@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planowanie Treningów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Planowanie Treningów</h1>
+
+    <div class="form-container">
+        <h2>Dodaj Użytkownika</h2>
+        <form id="userForm">
+            <label for="firstName">Imię:</label>
+            <input type="text" id="firstName" required>
+            <label for="lastName">Nazwisko:</label>
+            <input type="text" id="lastName" required>
+            <button type="submit">Dodaj Użytkownika</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h2>Dodaj Plan do Użytkownika</h2>
+        <form id="planForm">
+            <label for="userId">ID Użytkownika:</label>
+            <input type="text" id="userId" required>
+            <label for="goal">Cel:</label>
+            <input type="text" id="goal" required>
+            <label for="daysPerWeek">Dni w tygodniu:</label>
+            <input type="number" id="daysPerWeek" required>
+
+            <div id="dayPlansContainer">
+
+            </div>
+
+            <button type="button" onclick="addDayPlan()">Dodaj Dzień Treningowy</button>
+            <button type="submit">Dodaj Plan</button>
+        </form>
+    </div>
+
+    <div id="usersList">
+        <h2>Użytkownicy</h2>
+        <ul id="users"></ul>
+    </div>
+
+    <div id="measurementModal" style="display: none;">
+        <form id="measurementForm" onsubmit="addMeasurement(event)">
+            <h3>Dodaj Pomiar</h3>
+
+            <input type="hidden" id="modalUserId">
+
+            <label for="date">Data:</label>
+            <input type="date" id="date" required>
+
+            <label for="weight">Waga (kg):</label>
+            <input type="number" id="weight" step="0.1" required>
+
+            <label for="height">Wzrost (cm):</label>
+            <input type="number" id="height" step="0.1" required>
+
+            <label for="chestCircumference">Obwód klatki (cm):</label>
+            <input type="number" id="chestCircumference" step="0.1" required>
+
+            <label for="waistCircumference">Obwód talii (cm):</label>
+            <input type="number" id="waistCircumference" step="0.1" required>
+
+            <button type="submit">Dodaj</button>
+            <button type="button" onclick="closeModal()">Anuluj</button>
+        </form>
+    </div>
+
+    <div id="plansContainer">
+        <h2>Plan/Plany użytkownika</h2>
+
+    </div>
+
+
+    <div id="measurementsContainer">
+        <h2>Lista Pomiarów</h2>
+        <div id="measurementsList"></div>
+    </div>
+
+    <div id="message"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
