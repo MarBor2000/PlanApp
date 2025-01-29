@@ -12,8 +12,7 @@ This application is designed to manage users' training plans. It allows users to
 - **Frontend**: HTML5, CSS3, JavaScript (ES6)
 - **Database**: MongoDB
 - **Dependency Management**: Maven
-- **Styling**: Bootstrap 5
-
+  
 ### Main Components
 - **Model**: `User`, `WorkoutPlan`, `DayPlan`, `Exercise`, `Measurement`
 - **Controller**: Handles HTTP requests
